@@ -1,0 +1,17 @@
+---
+import { strengths } from '../config';
+---
+
+<section class="section" id={strengths.id} aria-labelledby="strengths-title">
+  <div class="container container--narrow">
+    <h2 class="section__title" id="strengths-title">{strengths.title}</h2>
+    <ul class="strengths">
+      {strengths.items.map((item) => (
+        <li>
+          <strong>{item.title}</strong>
+          {item.text && <span>{item.text}</span>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

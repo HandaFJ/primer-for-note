@@ -1,0 +1,16 @@
+---
+import { url } from '../utils/url';
+import { about } from '../config';
+---
+
+<section class="section" id={about.id} aria-labelledby="about-title">
+  <div class="container">
+    <h2 class="section__title" id="about-title">{about.title}</h2>
+    <div class="about">
+      <img class="about__image" src={url(about.image.src)} alt={about.image.alt} width="800" height="800" loading="lazy" />
+      <div class="about__text">
+        {about.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+---
+import { url } from '../utils/url';
+import { hero } from '../config';
+---
+
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <h1>{hero.title}</h1>
+      <p>{hero.lead}</p>
+      <a class="btn" href={hero.cta.href}>{hero.cta.label}</a>
+    </div>
+    <img class="hero__image" src={url(hero.image.src)} alt={hero.image.alt} width="1200" height="900" fetchpriority="high" />
+  </div>
+</section>

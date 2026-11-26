@@ -1,0 +1,38 @@
+---
+import { url } from '../utils/url';
+import { site, nav } from '../config';
+---
+
+<header class="site-header">
+  <a class="site-header__logo" href={url('/')}>{site.logo}</a>
+
+  <div class="fsmenu">
+    <input id="menu-toggle" class="fsmenu__toggle" type="checkbox" aria-label="Open menu" />
+    <div class="fsmenu__button" aria-hidden="true"><span></span></div>
+    <nav class="fsmenu__panel" aria-label="Main">
+      <div>
+        <ul>
+          {nav.map((item, i) => (
+            <li style={`--i:${i}`}><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Close the menu after choosing a link, or with the Escape key.
+  const toggle = document.getElementById('menu-toggle') as HTMLInputElement | null;
+  if (toggle) {
+    document.querySelectorAll('.fsmenu__panel a').forEach((a) =>
+      a.addEventListener('click', () => (toggle.checked = false)),
+    );
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.checked) {
+        toggle.checked = false;
+        toggle.focus();
+      }
+    });
+  }
+</script>

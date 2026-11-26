@@ -1,0 +1,44 @@
+---
+import { url } from '../utils/url';
+import { list } from '../config';
+const bundles = list.bundles?.items ?? [];
+---
+
+<section class="section section--alt" id={list.id} aria-labelledby="list-title">
+  <div class="container">
+    <h2 class="section__title" id="list-title">{list.title}</h2>
+
+    <ul class="cards">
+      {list.items.map((item) => (
+        <li class="card">
+          <img src={url(item.image.src)} alt={item.image.alt} width="900" height="600" loading="lazy" />
+          <div class="card__body">
+            <h3>
+              {item.href ? <a href={item.href}>{item.title}</a> : item.title}
+            </h3>
+            <p>{item.description}</p>
+            {item.price && <p class="card__price">{item.price}</p>}
+          </div>
+        </li>
+      ))}
+    </ul>
+    {list.note && <p class="list-note">{list.note}</p>}
+
+    {bundles.length > 0 && (
+      <>
+        <h3 class="bubble">{list.bundles.title}</h3>
+        <div class="bundles">
+          {bundles.map((b) => (
+            <article class="bundle">
+              <img src={url(b.image.src)} alt={b.image.alt} width="600" height="400" loading="lazy" />
+              <div>
+                <h4>{b.href ? <a href={b.href}>{b.title}</a> : b.title}</h4>
+                <p>{b.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+</section>

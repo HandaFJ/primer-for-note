@@ -1,0 +1,28 @@
+{
+  "name": "astro-primer",
+  "version": "1.0.0",
+  "description": "A one-page Astro theme for learning materials, courses and digital products: hero, about, strengths, item list and call to action.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "astro-theme",
+    "withastro",
+    "astro",
+    "landing-page",
+    "one-page",
+    "css-only",
+    "no-javascript-framework"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.4.13"
+  },
+  "engines": {
+    "node": ">=22.23.4"
+  }
+}
