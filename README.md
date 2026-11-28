@@ -1,3 +1,5 @@
+[日本語版 README](./README.ja.md)
+
 # Primer: an Astro theme for learning materials and digital products
 
 A one-page theme built with Astro 7 only (no UI framework, no CSS library).
